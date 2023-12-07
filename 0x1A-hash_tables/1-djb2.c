@@ -1,7 +1,11 @@
-sh_djb2 - Hash function, takes a string and turns it into a hash number
- * @str: the string, a constant value unrepeated in the hash table
+#include "hash_tables.h"
+
+/**
+ * hash_djb2 - function that generates a random number through
+ * a string given (hash number)
  *
- * Return: The hash number
+ * @str: string
+ * Return: hash number
  */
 unsigned long int hash_djb2(const unsigned char *str)
 {
@@ -14,3 +18,4 @@ unsigned long int hash_djb2(const unsigned char *str)
 		hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
 	}
 	return (hash);
+}
